@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Select Symptoms</h1>
+        <div id="symptom-list">
+            {% for symptom in symptoms %}
+                <label><input type="checkbox" value="{{ symptom }}"> {{ symptom }}</label><br>
+            {% endfor %}
+        </div>
+        <button onclick="predictDisease()">Predict Disease</button>
+        <h2 id="result"></h2>
+        <div id="vitals"></div> <!-- vitals table will appear here -->
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
